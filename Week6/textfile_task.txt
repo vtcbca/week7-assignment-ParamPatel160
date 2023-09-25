@@ -1,0 +1,109 @@
+Program 1: Read Python.txt file and Print it in Reverse.
+import csv
+with open("c:/sqlite3/csv/Python.txt","r",errors="ignore") as f:
+    content=f.read()
+    reversed_content=content[::-1]
+    print(reversed_content)
+
+PROGRAM-1 OUTPUT:-
+.segaugnal gnimmargorp ralupop tsom eht fo eno s'ti woN .yldipar gniworg si nohtyP fo ytiralupop ehT
+.segaugnal gnimmargorp eht fo tsom naht edoc fo senil rewef ni smargorp etirw ot uoy swolla nohtyP
+.no os dna ,tnempoleved noitacilppa dipar ,ecneics atad ,snoitacilppa bew gnipoleved rof desu s'tI .snoitacilppa fo tol a sah nohtyP
+.elbadaer yrev si edoc dna ysae si xatnys stI .nrael ot ysae si nohtyP
+?nohtyP nraeL yhW
+.srennigeb rof nrael ot egaugnal taerg a nohtyP sekam sihT
+ .xatnys esu-ot-ysae ,elpmis a sah nohtyP ,srennigeb rof yletanutroF
+ .sdleif rehto ynam dna ,snoitacilppa potksed ,tnempoleved bew ,gninrael enihcam ni desu si tI
+.1991 ni desaeler dna ,mussoR nav odiuG yb detaerc saw tI
+.egaugnal gnimmargorp esoprup-lareneg ralupop a si nohtyP
+
+Program 2: Read Python.txt file and Print total number of lines and words in it.
+import csv
+with open("c:/sqlite3/csv/Python.txt","r",errors="ignore") as f:
+    content = f.read()
+    total_lines = content.count('\n') + 1
+    words = content.split()
+    total_words = len(words)
+    print(content)
+   
+Python is a popular general-purpose programming language.
+It was created by Guido van Rossum, and released in 1991.
+It is used in machine learning, web development, desktop applications, and many other fields. 
+Fortunately for beginners, Python has a simple, easy-to-use syntax. 
+This makes Python a great language to learn for beginners.
+Why Learn Python?
+Python is easy to learn. Its syntax is easy and code is very readable.
+Python has a lot of applications. It's used for developing web applications, data science, rapid application development, and so on.
+Python allows you to write programs in fewer lines of code than most of the programming languages.
+The popularity of Python is growing rapidly. Now it's one of the most popular programming languages.\
+
+print("Total number of lines:", total_lines)
+print("Total number of words:", total_words)
+
+PROGRAM-2 OUTPUT:-
+Total number of lines: 10
+Total number of words: 121
+
+Program 3: Read Python.txt file and Print unique word with its count.
+import csv
+with open('c:\\sqlite3\\CSV\\python.txt','r') as rf:
+    file=rf.read()
+    print(file)
+    words=file.split()
+    u=set(words)
+    print("Unique Values Are:",u)
+    for word in u:
+        print(word, ":", words.count(word))
+
+
+Program 4: Read Python.txt file and Print largest and smallest word from it.
+import csv
+with open("c:/sqlite3/csv/Python.txt","r",errors="ignore") as f:
+    content = f.read()
+    words = content.split()
+    cleaned_words = [word.strip('.,!?').lower() for word in words]
+    largest_word = max(cleaned_words, key=len)
+    smallest_word = min(cleaned_words, key=len)
+    print(f"Largest word: {largest_word}")
+    print(f"Smallest word: {smallest_word}")
+
+PROGRAM-4 OUTPUT:-
+Largest word: general-purpose
+Smallest word: a
+
+Program 5: Read Python.txt file. Convert it into upper case and write into another file "Python_Upper.txt"
+import csv
+with open("c:/sqlite3/csv/Python.txt","r",errors="ignore") as f:
+    content = f.read()
+    print(content)
+    with open("c:/sqlite3/csv/Python_Upper.txt","w") as f1:
+        f1.write(content.upper())
+
+Python is a popular general-purpose programming language.
+It was created by Guido van Rossum, and released in 1991.
+It is used in machine learning, web development, desktop applications, and many other fields. 
+Fortunately for beginners, Python has a simple, easy-to-use syntax. 
+This makes Python a great language to learn for beginners.
+Why Learn Python?
+Python is easy to learn. Its syntax is easy and code is very readable.
+Python has a lot of applications. It's used for developing web applications, data science, rapid application development, and so on.
+Python allows you to write programs in fewer lines of code than most of the programming languages.
+The popularity of Python is growing rapidly. Now it's one of the most popular programming languages.
+
+
+with open("c:/sqlite3/csv/Python_Upper.txt","r",errors="ignore") as f:
+    print(f.read())
+
+PROGRAM-5 OUTPUT:-
+PYTHON IS A POPULAR GENERAL-PURPOSE PROGRAMMING LANGUAGE.
+IT WAS CREATED BY GUIDO VAN ROSSUM, AND RELEASED IN 1991.
+IT IS USED IN MACHINE LEARNING, WEB DEVELOPMENT, DESKTOP APPLICATIONS, AND MANY OTHER FIELDS. 
+FORTUNATELY FOR BEGINNERS, PYTHON HAS A SIMPLE, EASY-TO-USE SYNTAX. 
+THIS MAKES PYTHON A GREAT LANGUAGE TO LEARN FOR BEGINNERS.
+WHY LEARN PYTHON?
+PYTHON IS EASY TO LEARN. ITS SYNTAX IS EASY AND CODE IS VERY READABLE.
+PYTHON HAS A LOT OF APPLICATIONS. IT'S USED FOR DEVELOPING WEB APPLICATIONS, DATA SCIENCE, RAPID APPLICATION DEVELOPMENT, AND SO ON.
+PYTHON ALLOWS YOU TO WRITE PROGRAMS IN FEWER LINES OF CODE THAN MOST OF THE PROGRAMMING LANGUAGES.
+THE POPULARITY OF PYTHON IS GROWING RAPIDLY. NOW IT'S ONE OF THE MOST POPULAR PROGRAMMING LANGUAGES.
+
+

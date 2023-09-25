@@ -1,0 +1,99 @@
+Microsoft Windows [Version 10.0.16299.15]
+(c) 2017 Microsoft Corporation. All rights reserved.
+
+C:\Users\scott>cd../..
+
+C:\>cd sqlite
+
+C:\sqlite>sqlite3 general.db
+SQLite version 3.36.0 2021-06-18 18:36:39
+Enter ".help" for usage hints.
+
+sqlite> create table stud
+   ...> (
+   ...> id integer primary key,
+   ...> name varchar
+   ...> );
+
+sqlite> create table stud_details
+   ...> (
+   ...> id integer references stud(id),
+   ...> city varchar,
+   ...> mo_no integer
+   ...> );
+
+sqlite> insert into stud values(1,'Param'),(2,'brijal'),(3,'Neel'),(4,'Pratham'),(5,'Heer');
+sqlite> insert into stud values(6,'khushi'),(7,'Hanee'),(8,'Mann'),(9,'Dev'),(10,'Riya');
+sqlite> insert into stud_details values(1,'surat',1234567890),(2,'surat',1234567899),(3,'bardoli',1234567889);
+sqlite> insert into stud_details values(4,'ghara',1234467890),(5,'surat',1234567849),(6,'bardoli',1234567887);
+sqlite> insert into stud_details values(7,'bardoli',1234467890),(8,'surat',1234667849),(9,'bardoli',1334567887);
+sqlite> insert into stud_details values(10,'bardoli',1234467800);
+
+sqlite> select * from stud;
+1|Param
+2|brijal
+3|Neel
+4|Pratham
+5|Heer
+6|khushi
+7|Hanee
+8|Mann
+9|Dev
+10|Riya
+
+sqlite> select * from stud_details;
+1|surat|1234567890
+2|surat|1234567899
+3|bardoli|1234567889
+4|ghara|1234467890
+5|surat|1234567849
+6|bardoli|1234567887
+7|bardoli|1234467890
+8|surat|1234667849
+9|bardoli|1334567887
+10|bardoli|1234467800
+
+sqlite> select s.id , s.name , sd.city from stud as s 
+        inner join stud_details as sd 
+        on s.id = sd.id 
+        where sd.city='surat';
+1|Param|surat
+2|brijal|surat
+5|Heer|surat
+8|Mann|surat
+
+sqlite> select s.id , s.name , sd.city from stud as s 
+        inner join stud_details as sd 
+        on s.id = sd.id 
+        where name like 'b%';
+2|brijal|surat
+
+sqlite> update stud_details
+   ...> set mo_no = 1234567890
+   ...> where id = 1;
+
+sqlite> select * from stud;
+1|Param
+2|brijal
+3|Neel
+4|Pratham
+5|Heer
+6|khushi
+7|Hanee
+8|Mann
+9|Dev
+10|Riya
+
+sqlite> select * from stud_details;
+1|surat|1234567890
+2|surat|1234567899
+3|bardoli|1234567889
+4|ghara|1234467890
+5|surat|1234567849
+6|bardoli|1234567887
+7|bardoli|1234467890
+8|surat|1234667849
+9|bardoli|1334567887
+10|bardoli|1234467800
+
+
