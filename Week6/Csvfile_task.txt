@@ -1,0 +1,37 @@
+import csv 
+
+header=['sid','sname','STAT','OOPs','WD','PYHTON','SE']
+data=[[1,'Pratham',85,74,78,70,83],[2,'naman',63,87,78,77,67],[3,'neel',69,77,75,80,71],[4,'param',80,80,80,80,80],[5,'karan',59,59,74,52,55]]
+
+with open("C:/sqlite3/csv/result.csv",'w',newline='') as f:
+    w=csv.writer(f)
+    w.writerow(header)
+    w.writerows(data)
+
+with open("C:/sqlite3/csv/result.csv",'r') as f:
+    print(f.read())
+
+sid,sname,STAT,OOPs,WD,PYHTON,SE
+1,Pratham,85,74,78,70,83
+2,naman,63,87,78,77,67
+3,neel,69,77,75,80,71
+4,param,80,80,80,80,80
+5,karan,59,59,74,52,55
+
+new_header=['TOTAL','GRADE']
+new_data=[[390,'B'],[372,'B'],[372,'B'],[400,'A'],[299,'C']]
+
+with open("C:/sqlite3/csv/result.csv",'a',newline='') as f:
+    w=csv.writer(f)
+    w.writerow(new_header)
+    w.writerows(new_data)
+
+with open("C:/sqlite3/csv/result.csv",'r') as f:
+    print(f.read())
+
+sid,sname,STAT,OOPs,WD,PYHTON,SE,TOTAL,GRADE
+1,Pratham,85,74,78,70,83,390,B
+2,naman,63,87,78,77,67,372,B
+3,neel,69,77,75,80,71,372,B
+4,param,80,80,80,80,80,400,A
+5,karan,59,59,74,52,55,299,C
